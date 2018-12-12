@@ -10,11 +10,12 @@ server:
 eureka:
   instance:
     hostname: peer1
+    prefer-ip-address: false
   client:
-#    register-with-eureka: false
-#    fetch-registry: false
-#    healthcheck:
-#      enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
     service-url:
       defaultZone: http://peer2:9762/eureka/,http://peer3:9763/eureka/
 
