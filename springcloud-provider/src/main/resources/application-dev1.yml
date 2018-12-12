@@ -1,18 +1,21 @@
 server:
-  port: 8083
+  port: 8086
 
 spring:
   application:
-    name: springcloud-consumer
+    name: springcloud-provider
   datasource:
-    url:jdbc: mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=UTC
     username: root
     driver-class-name: com.mysql.jdbc.Driver
+
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
-#    register-with-eureka: false
-#    fetch-registry: false
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
 
 

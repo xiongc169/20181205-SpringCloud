@@ -1,0 +1,20 @@
+#peer2服务中心的配置，将serviceUrl指向peer1
+#java -jar springcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+spring:
+  application:
+    name: springcloud-eureka-ha
+
+server:
+  port: 9762
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#    healthcheck:
+#      enabled: true
+    service-url:
+      defaultZone: http://peer1:9761/eureka/,http://peer3:9763/eureka/
+

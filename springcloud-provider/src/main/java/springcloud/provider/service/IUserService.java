@@ -2,7 +2,7 @@ package springcloud.provider.service;
 
 import springcloud.provider.model.User;
 
-public interface UserService {
+public interface IUserService {
 
     User addUser(User user);
 

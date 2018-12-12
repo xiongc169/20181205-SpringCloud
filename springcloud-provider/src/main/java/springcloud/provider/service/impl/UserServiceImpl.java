@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springcloud.provider.dao.UserRepository;
 import springcloud.provider.model.User;
-import springcloud.provider.service.UserService;
-
-import java.util.Optional;
+import springcloud.provider.service.IUserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserRepository userRepository;

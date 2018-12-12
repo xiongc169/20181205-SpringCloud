@@ -6,19 +6,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import springcloud.consumer.model.User;
+import springcloud.consumer.service.IUserService;
 
 @Controller
-public class UserController {
+public class ConsumerController {
 
     @Autowired
-    private RestTemplate template;
+    private IUserService userService;
 
     @ResponseBody
-    @RequestMapping("/user/get")
+    @RequestMapping("/consumer/get")
     public void addUser() {
         try {
-            User user = template.getForObject("http://127.0.0.1:8085/user/get", User.class);
-            System.out.println(user.getId() + " " + user.getName());
+            User user = userService.getUser(2l);
+            System.out.println("Consumer " + user.getId() + " " + user.getName());
         } catch (Exception ex) {
             ex.printStackTrace();
         }

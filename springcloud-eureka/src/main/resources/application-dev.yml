@@ -9,8 +9,8 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-      defaultZone: http://127.0.0.1/eureka/
     healthcheck:
       enabled: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
 
