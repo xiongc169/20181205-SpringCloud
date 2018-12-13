@@ -10,7 +10,7 @@ public class ConfigClientController {
     @Value("${yoong.profile}")
     private String config;
 
-    @RequestMapping("configclient/getconfig")
+    @RequestMapping("config/getConfig")
     public void getConfig() {
         System.out.println(config);
     }
