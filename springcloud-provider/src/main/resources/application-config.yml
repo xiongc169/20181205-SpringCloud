@@ -1,0 +1,33 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: springcloud-provider-config
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiongc169/20181205-SpringCloud
+          search-paths: config-repo
+          username:
+          password:
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+
+
+
+
