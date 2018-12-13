@@ -5,16 +5,26 @@ spring:
   application:
     name: hystrix-dashboard-turbine
 
+turbine:
+  app-config: springcloud-consumer,springcloud-consumer1
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
-    healthcheck:
-      enabled: true
-  instance:
-    prefer-ip-address: true
-turbine:
-  app-config:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
+#    healthcheck:
+#      enabled: true
+#  instance:
+#    prefer-ip-address: true
+
+
 
 

@@ -1,9 +1,9 @@
 server:
-  port: 8083
+  port: 8084
 
 spring:
   application:
-    name: springcloud-consumer
+    name: springcloud-consumer1
   datasource:
     url:jdbc: mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=UTC
     username: root

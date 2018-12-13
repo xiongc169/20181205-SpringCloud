@@ -38,6 +38,13 @@
             <version>1.5.10.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-eureka</artifactId>-->
+        <!--<version>1.4.6.RELEASE</version>-->
+        <!--</dependency>-->
+
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix-dashboard -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -59,6 +66,13 @@
             <version>1.4.6.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.netflix.archaius/archaius-core -->
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>0.7.6</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -69,6 +83,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
