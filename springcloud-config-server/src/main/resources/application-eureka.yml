@@ -1,0 +1,14 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: springcloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiongc169/20181205-SpringCloud
+          search-paths: config-repo
+          username:
+          password:

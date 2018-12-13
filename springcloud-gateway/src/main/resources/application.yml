@@ -1,0 +1,17 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: springcloud-gateway
+
+zuul:
+  routes:
+    baidu:
+      path: /*/
+      url: https://www.baidu.com/
+
+
+
+
+
