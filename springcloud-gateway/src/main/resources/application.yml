@@ -5,13 +5,22 @@ spring:
   application:
     name: springcloud-gateway
 
-zuul:
-  routes:
-    baidu:
-      path: /*/
-      url: https://www.baidu.com/
+#配置表示：访问/gateway/** 直接重定向到http://localhost:8085/user/**
+#zuul:
+#  routes:
+#    user:
+#      path: /user/**
+#      url: http://localhost:8085/user/
 
+#将**的url映射到springcloud-provider
+#zuul:
+#  routes:
+#    user:
+#      path: /user/**
+#      serviceId: springcloud-provider
 
-
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
 

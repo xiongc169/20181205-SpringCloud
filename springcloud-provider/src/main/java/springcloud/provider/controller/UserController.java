@@ -46,4 +46,32 @@ public class UserController {
             return null;
         }
     }
+
+    @ResponseBody
+    @RequestMapping("/user/getTime")
+    public String getTime1() {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+            String result = "provider\\UserController.getTime1(): " + format.format(new Date());
+            System.out.println(result);
+            return result;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping("/getTime")
+    public String getTime2() {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+            String result = "provider\\UserController.getTime2(): " + format.format(new Date());
+            System.out.println(result);
+            return result;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
 }
