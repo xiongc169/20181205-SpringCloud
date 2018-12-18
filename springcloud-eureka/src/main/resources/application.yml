@@ -1,0 +1,56 @@
+---
+
+server:
+  port: 9761
+
+spring:
+  application:
+    name: springcloud-eureka-ha2
+  profiles: peer21
+
+eureka:
+  instance:
+    hostname: peer21
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://peer22:8001/eureka/,http://peer23:8002/eureka/
+
+---
+
+server:
+  port: 9762
+
+spring:
+  application:
+    name: springcloud-eureka-ha2
+  profiles: peer22
+
+eureka:
+  instance:
+    hostname: peer22
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://peer21:8000/eureka/,http://peer23:8002/eureka/
+
+---
+
+server:
+  port: 9763
+
+spring:
+  application:
+    name: springcloud-eureka-ha2
+  profiles: peer23
+
+eureka:
+  instance:
+    hostname: peer23
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://peer21:8000/eureka/,http://peer22:8001/eureka/
