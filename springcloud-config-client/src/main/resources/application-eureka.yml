@@ -1,0 +1,23 @@
+server:
+  port: 8050
+#spring配置
+spring:
+  application:
+    name: springcloud-config-client
+  cloud:
+    config:
+      name: yoong
+      profile: dev
+      uri: http://127.0.0.1:8040
+      label: master
+
+#权限配置
+management:
+  security:
+    enabled: false
+
+#注册到Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/

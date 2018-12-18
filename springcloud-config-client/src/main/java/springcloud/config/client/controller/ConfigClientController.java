@@ -17,11 +17,10 @@ public class ConfigClientController {
     //private String test;
 
     @ResponseBody
-    @RequestMapping("config/getConfig")
+    @RequestMapping("/client/getConfig")
     public String getConfig() {
         System.out.println(dev);
         //System.out.println(test);
         return dev;
-
     }
 }
