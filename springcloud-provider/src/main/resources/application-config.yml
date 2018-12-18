@@ -1,13 +1,14 @@
 server:
-  port: 8040
+  port: 8012
 
 spring:
   application:
     name: springcloud-provider-config
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=UTC
-    username: root
+    url: jdbc:mysql://127.0.0.1:3306/yoong_rehearsal?characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
   cloud:
     config:
       server:
@@ -22,7 +23,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:9761/eureka/,http://peer2:9762/eureka/,http://peer3:9763/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
     healthcheck:
       enabled: true
   instance:

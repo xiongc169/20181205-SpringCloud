@@ -15,12 +15,14 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/user/get")
-    public void addUser() {
+    public User addUser() {
+        User user = null;
         try {
-            User user = template.getForObject("http://127.0.0.1:8085/user/get", User.class);
+            user = template.getForObject("http://127.0.0.1:8010/user/get", User.class);
             System.out.println(user.getId() + " " + user.getName());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return user;
     }
 }

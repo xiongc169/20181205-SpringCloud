@@ -16,12 +16,14 @@ public class ConsumerController {
 
     @ResponseBody
     @RequestMapping("/consumer/get")
-    public void addUser() {
+    public User addUser() {
+        User user = null;
         try {
-            User user = userService.getUser(2l);
+            user = userService.getUser(2l);
             System.out.println("Consumer " + user.getId() + " " + user.getName());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return user;
     }
 }

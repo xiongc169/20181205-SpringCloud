@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import springcloud.consumer.hystrix.UserServiceHystrix;
 import springcloud.consumer.model.User;
 
+/**
+ * 远程调用(Feign)
+ */
 @FeignClient(name = "springcloud-provider", fallback = UserServiceHystrix.class)
 public interface IUserService {
 
