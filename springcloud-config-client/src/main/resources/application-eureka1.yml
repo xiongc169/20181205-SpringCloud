@@ -1,17 +1,21 @@
 server:
-  port: 8040
-
+  port: 8051
+#spring配置
 spring:
   application:
-    name: springcloud-config-server
+    name: springcloud-config-client
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/xiongc169/20181205-SpringCloud
-          search-paths: config-repo
-          username:
-          password:
+      name: yoong
+      profile: dev
+      uri: http://127.0.0.1:8040
+      label: master
+      discovery:
+        enabled: true
+        service-id: springcloud-config-server
+    bus:
+      trace:
+        enabled: true
   rabbitmq:
     host: 127.0.0.1
     port: 5672
