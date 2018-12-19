@@ -1,24 +1,37 @@
 server:
-  port: 8088
+  port: 8060
 
 spring:
   application:
     name: springcloud-gateway
 
-#配置表示：访问/gateway/** 直接重定向到http://localhost:8085/user/**
+#一、简单使用
+#配置http://localhost:8010/user/，访问/user/**，直接重定向到http://localhost:8010/user/**，如http://127.0.0.1:8060/user/getTime -> http://localhost:8010/user/getTime
+#配置http://localhost:8010/，访问/user/**，直接重定向到http://localhost:8010/**，如http://127.0.0.1:8060/user/getTime -> http://localhost:8010/getTime
 #zuul:
 #  routes:
 #    user:
 #      path: /user/**
-#      url: http://localhost:8085/user/
+#      url: http://localhost:8010/user/
 
+#二、服务化
 #将**的url映射到springcloud-provider
+#访问 http://localhost:8060/user/getTime，跳转到 http://localhost:8010/getTime
+#访问 http://localhost:8060/user/user/getTime，跳转到 http://localhost:8010/user/getTime
 #zuul:
 #  routes:
 #    user:
 #      path: /user/**
 #      serviceId: springcloud-provider
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8761/eureka/
 
+#三、网关的默认路由规则
+#Zuul的路由规则：http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**，会被转发到serviceId对应的微服务
+#访问 http://localhost:8060/springcloud-provider/user/getTime，跳转到 http://localhost:8010/user/getTime
+#访问 http://localhost:8060/springcloud-provider/getTime，跳转到 http://localhost:8010/getTime
 eureka:
   client:
     service-url:
