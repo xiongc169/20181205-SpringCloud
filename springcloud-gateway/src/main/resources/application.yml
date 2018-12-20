@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: springcloud-gateway
+  #zipkin，分布式链路跟踪
+  zipkin:
+    base-url: http://127.0.0.1:8070/
+  sleuth:
+    sampler:
+      percentage: 1.0
 
 #一、简单使用
 #配置http://localhost:8010/user/，访问/user/**，直接重定向到http://localhost:8010/user/**，如http://127.0.0.1:8060/user/getTime -> http://localhost:8010/user/getTime
