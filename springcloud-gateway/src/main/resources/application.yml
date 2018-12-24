@@ -1,36 +1,39 @@
 server:
   port: 8110
 
-#http://127.0.0.1:8110/SPRINGCLOUD-PROVIDER/user/getTime
+
+#http://127.0.0.1:8110/gateway/getTime
+#默认路由规则：http://127.0.0.1:8110/SPRINGCLOUD-PROVIDER/user/getTime
+
+#访问 http://127.0.0.1:8110/getTime, 跳转到 http://127.0.0.1:8010/getTime
+#访问 http://127.0.0.1:8110/user/getTime, 跳转不到 http://127.0.0.1:8010/user/getTime
 spring:
   application:
     name: springcloud-gateway
   cloud:
     gateway:
       routes:
-      - id: neo_route
-        uri: http://www.baidu.com
+      - id: local
+        uri: http://127.0.0.1:8010/
         predicates:
-         Path=/gateway/getTime
+        - Path=/getTime
 
 
+#访问 http://127.0.0.1:8110/user/getTime, 跳转到 http://127.0.0.1:8010/user/getTime
+#spring:
+#  application:
+#    name: springcloud-gateway
 #  cloud:
 #    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
 #      routes:
-#      - id: baidu
+#      - id: local
 #        uri: http://127.0.0.1:8010/
 #        predicates:
-#          - Path=/gateway/getTime
-#        filters:
+#        - Path=/user/getTime
 
 
-#  cloud:
-#    gateway:
-#      routes:
-#       -id: baidu
-#       uri: http://www.baidu.com
-#       predicates:
-#        -Path: /getTime/**
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8761/eureka/
+
