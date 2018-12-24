@@ -1,4 +1,4 @@
-package springcloud.gateway.controller;
+package springcloud.zuul.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,8 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/gateway")
-public class GatewayController {
+@RequestMapping("/zuul")
+public class ZuulController {
 
     @ResponseBody
     @RequestMapping("/getName")

@@ -1,4 +1,4 @@
-package springcloud.gateway.controller;
+package springcloud.zuul.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ public class UserController {
     public String getTime() {
         try {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-            String result = "gateway\\UserController.getTime(): " + format.format(new Date());
+            String result = "zuul\\UserController.getTime(): " + format.format(new Date());
             System.out.println(result);
             return result;
         } catch (Exception ex) {

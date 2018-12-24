@@ -33,5 +33,4 @@ public class ServiceController {
         return loadBalancerClient.choose("springcloud-consul-service").getUri().toString();
     }
 
-
 }

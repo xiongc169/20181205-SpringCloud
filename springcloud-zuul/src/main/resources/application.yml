@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: springcloud-gateway
+    name: springcloud-zuul
   #zipkin，分布式链路跟踪
   zipkin:
     base-url: http://127.0.0.1:8070/
