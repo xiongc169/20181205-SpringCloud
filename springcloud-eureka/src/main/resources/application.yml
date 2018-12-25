@@ -1,7 +1,7 @@
 ---
 
 server:
-  port: 9761
+  port: 8000
 
 spring:
   application:
@@ -20,7 +20,7 @@ eureka:
 ---
 
 server:
-  port: 9762
+  port: 8001
 
 spring:
   application:
@@ -39,7 +39,7 @@ eureka:
 ---
 
 server:
-  port: 9763
+  port: 8002
 
 spring:
   application:
