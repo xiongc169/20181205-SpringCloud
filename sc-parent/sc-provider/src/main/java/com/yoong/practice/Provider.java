@@ -11,8 +11,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class Provider {
     public static void main(String[] args) {
-        System.out.println("Hello World 1");
+        System.out.println("Provider Start...");
         SpringApplication.run(Provider.class);
-        System.out.println("Hello World 2");
+        System.out.println("Provider Start Success");
     }
 }

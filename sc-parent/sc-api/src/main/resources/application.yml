@@ -1,13 +1,12 @@
 server:
-  port: 8761
+  port: 8030
 
 spring:
   application:
-    name: sc-eureka
+    name: sc-api
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
+

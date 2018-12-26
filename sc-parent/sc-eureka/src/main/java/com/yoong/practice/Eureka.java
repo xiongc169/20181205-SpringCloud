@@ -15,8 +15,8 @@ public class Eureka {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello World 1");
+        System.out.println("Eureka Start...");
         SpringApplication.run(Eureka.class);
-        System.out.println("Hello World 2");
+        System.out.println("Eureka Start Success");
     }
 }
