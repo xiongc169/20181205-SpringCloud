@@ -1,6 +1,7 @@
-package com.yoong.practice.api;
+package com.yoong.practice.hystrix;
 
 
+import com.yoong.practice.api.IGreet;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

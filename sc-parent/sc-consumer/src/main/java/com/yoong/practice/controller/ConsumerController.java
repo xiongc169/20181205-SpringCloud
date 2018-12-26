@@ -1,6 +1,7 @@
 package com.yoong.practice.controller;
 
 import com.yoong.practice.api.IGreet;
+import com.yoong.practice.api.IWeather;
 import com.yoong.practice.service.CalculatorService;
 import com.yoong.practice.service.GreetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class ConsumerController {
 
 //    @Autowired
 //    private IGreet greet;
+
+    @Autowired
+    private IWeather weather;
 
     /**
      * http://localhost:8020/consumer/calculator
@@ -40,6 +44,17 @@ public class ConsumerController {
         //String result = greet.sayHello("Tony1");
         //System.out.println(result);
         String result = greetService.sayHello("Tony2");
+        System.out.println(result);
+        return result;
+    }
+
+    /**
+     * http://localhost:8020/consumer/getWeather
+     */
+    @ResponseBody
+    @RequestMapping("/consumer/getWeather")
+    public String getWeather() {
+        String result = weather.getWeather("Today");
         System.out.println(result);
         return result;
     }
