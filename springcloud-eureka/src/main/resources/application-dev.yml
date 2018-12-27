@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8761 # ${random.int(8000,8100)}，随机端口
 
 spring:
   application:
