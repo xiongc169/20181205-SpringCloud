@@ -1,4 +1,4 @@
-package com.yoong.practice.controller;
+package com.comm01.provider.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

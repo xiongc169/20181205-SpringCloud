@@ -1,6 +1,6 @@
-package com.yoong.practice.hystrix;
+package com.comm01.facade.hystrix;
 
-import com.yoong.practice.api.IWeather;
+import com.comm01.facade.api.IWeather;
 import org.springframework.stereotype.Component;
 
 @Component

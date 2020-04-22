@@ -1,9 +1,8 @@
-package com.yoong.practice.controller;
+package com.comm01.consumer.controller;
 
-import com.yoong.practice.api.IGreet;
-import com.yoong.practice.api.IWeather;
-import com.yoong.practice.service.CalculatorService;
-import com.yoong.practice.service.GreetService;
+import com.comm01.facade.api.IWeather;
+import com.comm01.consumer.service.CalculatorService;
+import com.comm01.consumer.service.GreetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

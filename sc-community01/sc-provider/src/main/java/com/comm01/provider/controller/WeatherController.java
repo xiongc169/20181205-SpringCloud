@@ -1,6 +1,6 @@
-package com.yoong.practice.controller;
+package com.comm01.provider.controller;
 
-import com.yoong.practice.api.IWeather;
+import com.comm01.facade.api.IWeather;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

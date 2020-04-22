@@ -1,8 +1,7 @@
-package com.yoong.practice.hystrix;
+package com.comm01.consumer.hystrix;
 
 
-import com.yoong.practice.api.IGreet;
-import com.yoong.practice.service.GreetService;
+import com.comm01.consumer.service.GreetService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

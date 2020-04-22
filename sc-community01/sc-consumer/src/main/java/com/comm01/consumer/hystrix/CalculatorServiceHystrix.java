@@ -1,6 +1,6 @@
-package com.yoong.practice.hystrix;
+package com.comm01.consumer.hystrix;
 
-import com.yoong.practice.service.CalculatorService;
+import com.comm01.consumer.service.CalculatorService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

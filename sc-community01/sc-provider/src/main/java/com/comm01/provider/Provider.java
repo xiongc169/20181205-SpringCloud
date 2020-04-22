@@ -1,4 +1,4 @@
-package com.yoong.practice;
+package com.comm01.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,14 +9,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Api {
-
-    /**
-     * @param args
-     */
+public class Provider {
     public static void main(String[] args) {
-        System.out.println("Api Start...");
-        SpringApplication.run(Api.class);
-        System.out.println("Api Start Success");
+        System.out.println("Provider Start...");
+        SpringApplication.run(Provider.class);
+        System.out.println("Provider Start Success");
     }
 }

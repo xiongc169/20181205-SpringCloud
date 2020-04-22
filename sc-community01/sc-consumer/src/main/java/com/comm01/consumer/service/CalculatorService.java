@@ -1,6 +1,6 @@
-package com.yoong.practice.service;
+package com.comm01.consumer.service;
 
-import com.yoong.practice.hystrix.CalculatorServiceHystrix;
+import com.comm01.consumer.hystrix.CalculatorServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

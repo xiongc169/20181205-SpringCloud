@@ -1,4 +1,4 @@
-package com.yoong.practice;
+package com.comm01.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
