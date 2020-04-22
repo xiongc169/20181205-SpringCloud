@@ -2,18 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.yoong.practice</groupId>
-    <artifactId>sc-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>sc-eureka</module>
-        <module>sc-api</module>
-        <module>sc-provider</module>
-        <module>sc-consumer</module>
-    </modules>
-    <packaging>pom</packaging>
-    <name>sc-parent</name>
-    <!-- FIXME change it to the project's website -->
+    <parent>
+        <groupId>com.yoong.practice</groupId>
+        <artifactId>sc-community01</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>sc-consumer</artifactId>
+    <name>sc-consumer</name>
     <url>http://www.example.com</url>
 
     <properties>
@@ -22,38 +17,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR2</version>
-                <!--<version>Finchley.RELEASE</version>-->
-                <!--<version>Edgware.SR5</version>-->
-                <!--<version>Edgware.RELEASE</version>-->
-                <!--<version>Dalston.SR5</version>-->
-                <!--<version>Dalston.RELEASE</version>-->
-                <!--<version>Camden.SR7</version>-->
-                <!--<version>Camden.RELEASE</version>-->
-                <!--<version>Brixton.SR7</version>-->
-                <!--<version>Brixton.RELEASE</version>-->
-                <!--<version>Angel.SR6</version>-->
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.7.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -61,6 +24,37 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.yoong.practice</groupId>
+            <artifactId>sc-facade</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <!--<version>1.2.7.RELEASE</version>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--<version>1.2.7.RELEASE</version>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
