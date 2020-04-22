@@ -2,57 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.yoong.practice</groupId>
+        <artifactId>sc-literature01</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <groupId>com.yoong.practice</groupId>
-    <artifactId>sc-community01</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>sc-community01</name>
+    <artifactId>literature01-consumer</artifactId>
+    <name>literature01-consumer</name>
     <url>http://www.example.com</url>
-
-    <modules>
-        <module>sc-facade</module>
-        <module>sc-eureka</module>
-        <module>sc-provider</module>
-        <module>sc-consumer</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR2</version>
-                <!--<version>Finchley.RELEASE</version>-->
-                <!--<version>Edgware.SR5</version>-->
-                <!--<version>Edgware.RELEASE</version>-->
-                <!--<version>Dalston.SR5</version>-->
-                <!--<version>Dalston.RELEASE</version>-->
-                <!--<version>Camden.SR7</version>-->
-                <!--<version>Camden.RELEASE</version>-->
-                <!--<version>Brixton.SR7</version>-->
-                <!--<version>Brixton.RELEASE</version>-->
-                <!--<version>Angel.SR6</version>-->
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.7.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -108,20 +72,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <repositories>
-        <repository>
-            <id>nexus-aliyun</id>
-            <name>Nexus aliyun</name>
-            <layout>default</layout>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
 </project>
