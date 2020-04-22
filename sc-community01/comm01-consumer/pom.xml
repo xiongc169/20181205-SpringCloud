@@ -7,8 +7,8 @@
         <artifactId>sc-community01</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>sc-provider</artifactId>
-    <name>sc-provider</name>
+    <artifactId>comm01-consumer</artifactId>
+    <name>comm01-consumer</name>
     <url>http://www.example.com</url>
 
     <properties>
@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>com.yoong.practice</groupId>
-            <artifactId>sc-facade</artifactId>
+            <artifactId>comm01-facade</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
@@ -47,6 +47,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -10,10 +10,10 @@
     <url>http://www.example.com</url>
 
     <modules>
-        <module>sc-facade</module>
-        <module>sc-eureka</module>
-        <module>sc-provider</module>
-        <module>sc-consumer</module>
+        <module>comm01-facade</module>
+        <module>comm01-eureka</module>
+        <module>comm01-provider</module>
+        <module>comm01-consumer</module>
     </modules>
 
     <properties>

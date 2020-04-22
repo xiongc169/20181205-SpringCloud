@@ -10,10 +10,10 @@
     <url>http://www.example.com</url>
 
     <modules>
-        <module>literature01-facade</module>
-        <module>literature01-eureka</module>
-        <module>literature01-consumer</module>
-        <module>literature01-provider</module>
+        <module>lite01-facade</module>
+        <module>lite01-eureka</module>
+        <module>lite01-consumer</module>
+        <module>lite01-provider</module>
     </modules>
 
     <properties>
