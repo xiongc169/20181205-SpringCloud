@@ -10,7 +10,12 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 //@EnableConfigServer
 public class SpringcloudProviderApp {
 
+    /**
+     * 入口函数
+     */
     public static void main(String[] args) {
+        System.out.println("SpringcloudProviderApp Start...");
         SpringApplication.run(SpringcloudProviderApp.class, args);
+        System.out.println("SpringcloudProviderApp Finished");
     }
 }

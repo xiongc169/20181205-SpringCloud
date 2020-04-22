@@ -17,8 +17,6 @@ public class ProviderController {
 
     /**
      * http://127.0.0.1:8010/provider/getServices
-     *
-     * @return
      */
     @ResponseBody
     @RequestMapping("/getServices")

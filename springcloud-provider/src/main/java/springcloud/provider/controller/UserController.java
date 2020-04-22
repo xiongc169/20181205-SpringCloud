@@ -20,12 +20,17 @@ public class UserController {
     @Value("${server.port}")
     private String port;
 
+    private SimpleDateFormat sdFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+
+    /**
+     * http://127.0.0.1:8010/user/add
+     */
     @ResponseBody
     @RequestMapping("/user/add")
     public void addUser() {
         try {
             User user = new User();
-            user.setName("name-" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));
+            user.setName("name-" + sdFormat.format(new Date()));
             user = userService.addUser(user);
             System.out.println(user.getId() + " " + user.getName());
         } catch (Exception ex) {
@@ -33,14 +38,15 @@ public class UserController {
         }
     }
 
+    /**
+     * http://127.0.0.1:8010/user/get?userId=6
+     */
     @ResponseBody
     @RequestMapping("/user/get")
     public User getUser(Long userId) {
         try {
-            userId = 1l;
             User user = userService.getUser(userId);
-            user.setName(port + " " + user.getName());
-            System.out.println(port + " " + user.getId() + " " + user.getName());
+            System.out.println("provider\\UserController.getUser(): " + port + " " + user.getId() + " " + user.getName());
             return user;
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -48,12 +54,14 @@ public class UserController {
         }
     }
 
+    /**
+     * http://127.0.0.1:8010/user/getTime
+     */
     @ResponseBody
     @RequestMapping("/user/getTime")
     public String getTime1() {
         try {
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-            String result = "provider\\UserController.getTime1(): " + format.format(new Date());
+            String result = "provider\\UserController.getTime1(): " + sdFormat.format(new Date());
             System.out.println(result);
             return result;
         } catch (Exception ex) {
@@ -62,12 +70,14 @@ public class UserController {
         }
     }
 
+    /**
+     * http://127.0.0.1:8010/getTime
+     */
     @ResponseBody
     @RequestMapping("/getTime")
     public String getTime2() {
         try {
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-            String result = "provider\\UserController.getTime2(): " + format.format(new Date());
+            String result = "provider\\UserController.getTime2(): " + sdFormat.format(new Date());
             System.out.println(result);
             return result;
         } catch (Exception ex) {

@@ -6,6 +6,8 @@ import springcloud.provider.dao.UserRepository;
 import springcloud.provider.model.User;
 import springcloud.provider.service.IUserService;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -18,7 +20,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     public User getUser(Long Id) {
-        User user = userRepository.findOne(Id);
-        return user;
+        Optional<User> user = userRepository.findById(Id);
+        return user.get();
     }
 }
