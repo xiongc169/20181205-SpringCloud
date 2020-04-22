@@ -1,4 +1,4 @@
-package com.yoong.practice;
+package com.comm01.consumer;
 
 import static org.junit.Assert.assertTrue;
 
