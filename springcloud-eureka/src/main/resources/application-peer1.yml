@@ -1,5 +1,5 @@
 #peer1服务中心的配置，将serviceUrl指向peer2
-#java -jar springcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+#java -jar springcloud-eureka.jar --spring.profiles.active=peer1
 server:
   port: 8000
 

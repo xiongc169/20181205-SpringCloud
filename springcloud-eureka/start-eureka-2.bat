@@ -1,3 +1,3 @@
-java -jar target/springcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+java -jar target/springcloud-eureka.jar --spring.profiles.active=peer2
 pause
 

@@ -1,5 +1,5 @@
 #peer2服务中心的配置，将serviceUrl指向peer1
-#java -jar springcloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+#java -jar springcloud-eureka.jar --spring.profiles.active=peer2
 server:
   port: 8001
 
@@ -11,8 +11,8 @@ eureka:
   instance:
     hostname: peer2
   client:
-#    register-with-eureka: false
-#    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     healthcheck:
       enabled: true
     service-url:

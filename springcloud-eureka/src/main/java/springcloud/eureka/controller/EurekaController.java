@@ -17,8 +17,6 @@ public class EurekaController {
 
     /**
      * http://127.0.0.1:8761/eureka/getServices
-     *
-     * @return
      */
     @ResponseBody
     @RequestMapping("/getServices")
