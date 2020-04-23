@@ -11,21 +11,27 @@ import java.util.Date;
 @RequestMapping("/zuul")
 public class ZuulController {
 
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
+
+    /**
+     * http://127.0.0.1:8060/zuul/getName
+     */
     @ResponseBody
     @RequestMapping("/getName")
     public String getName() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String now = format.format(new Date());
-        System.out.println("Name: " + now);
-        return now;
+        String result = format.format(new Date()) + " zuul\\ZuulController.getName()";
+        System.out.println(result);
+        return result;
     }
 
+    /**
+     * http://127.0.0.1:8060/zuul/user/getTime
+     */
     @ResponseBody
     @RequestMapping("/getTime")
     public String getTime() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String now = format.format(new Date());
-        System.out.println(now);
-        return now;
+        String result = format.format(new Date()) + " zuul\\ZuulController.getTime()";
+        System.out.println(result);
+        return result;
     }
 }

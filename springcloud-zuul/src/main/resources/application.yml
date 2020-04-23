@@ -5,20 +5,20 @@ spring:
   application:
     name: springcloud-zuul
   #zipkin，分布式链路跟踪
-  zipkin:
-    base-url: http://127.0.0.1:8070/
-  sleuth:
-    sampler:
-      percentage: 1.0
+#  zipkin:
+#    base-url: http://127.0.0.1:8070/
+#  sleuth:
+#    sampler:
+#      percentage: 1.0
 
 #一、简单使用
 #配置http://localhost:8010/user/，访问/user/**，直接重定向到http://localhost:8010/user/**，如http://127.0.0.1:8060/user/getTime -> http://localhost:8010/user/getTime
 #配置http://localhost:8010/，访问/user/**，直接重定向到http://localhost:8010/**，如http://127.0.0.1:8060/user/getTime -> http://localhost:8010/getTime
-#zuul:
-#  routes:
-#    user:
-#      path: /user/**
-#      url: http://localhost:8010/user/
+zuul:
+  routes:
+    user:
+      path: /user/**
+      url: http://localhost:8010/
 
 #二、服务化
 #将**的url映射到springcloud-provider
@@ -41,5 +41,5 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://peer1:8000/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
 

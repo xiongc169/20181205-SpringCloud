@@ -74,10 +74,11 @@ public class UserController {
     }
 
     /**
-     * http://127.0.0.1:8010/getTime
+     * http://127.0.0.1:8010/getTime，访问失败，URL路径尾部不能相同？
+     * http://127.0.0.1:8010/getTime2，访问成功
      */
     @ResponseBody
-    @RequestMapping("/getTime")
+    @RequestMapping("/getTime2")
     public String getTime2() {
         try {
             String result = format.format(new Date()) + " provider\\UserController.getTime2(): ";
