@@ -20,12 +20,16 @@ eureka:
 feign:
   hystrix:
     enabled: true
-  httpclient:
-    connection-timeout: 900000000
   client:
     config:
       default:
-        connect-timeout: 20000
-        read-timeout: 20000
+        connect-timeout: 999999999
+        read-timeout: 999999999
 
-
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

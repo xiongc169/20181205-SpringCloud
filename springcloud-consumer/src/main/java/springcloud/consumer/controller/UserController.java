@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import springcloud.consumer.model.User;
 
+import java.text.SimpleDateFormat;
+
 @Controller
 public class UserController {
+
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     @Autowired
     private RestTemplate template;

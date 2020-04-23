@@ -14,6 +14,8 @@ import java.util.Date;
 @Controller
 public class UserController {
 
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
+
     @Autowired
     private IUserService userService;
 
@@ -46,7 +48,8 @@ public class UserController {
     public User getUser(Long userId) {
         try {
             User user = userService.getUser(userId);
-            System.out.println("provider\\UserController.getUser(): " + port + " " + user.getId() + " " + user.getName());
+            String result = format.format(new Date()) + " provider\\UserController.getUser(): " + port + " " + user.getId() + " " + user.getName();
+            System.out.println(result);
             return user;
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -61,7 +64,7 @@ public class UserController {
     @RequestMapping("/user/getTime")
     public String getTime1() {
         try {
-            String result = "provider\\UserController.getTime1(): " + sdFormat.format(new Date());
+            String result = format.format(new Date()) + " provider\\UserController.getTime1(): ";
             System.out.println(result);
             return result;
         } catch (Exception ex) {
@@ -77,7 +80,7 @@ public class UserController {
     @RequestMapping("/getTime")
     public String getTime2() {
         try {
-            String result = "provider\\UserController.getTime2(): " + sdFormat.format(new Date());
+            String result = format.format(new Date()) + " provider\\UserController.getTime2(): ";
             System.out.println(result);
             return result;
         } catch (Exception ex) {

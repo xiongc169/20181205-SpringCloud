@@ -9,12 +9,17 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableHystrixDashboard
 @EnableCircuitBreaker
 public class SpringcloudConsumerApp {
+
+    private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     @Bean
     public RestTemplate restTemplate() {
@@ -25,8 +30,8 @@ public class SpringcloudConsumerApp {
      * 入口函数
      */
     public static void main(String[] args) {
-        System.out.println("SpringcloudConsumerApp Start...");
+        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsumerApp Start...");
         SpringApplication.run(SpringcloudConsumerApp.class, args);
-        System.out.println("SpringcloudConsumerApp Finished");
+        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsumerApp Finished");
     }
 }

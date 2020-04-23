@@ -13,13 +13,13 @@ import java.util.Date;
 @Component
 public class UserServiceHystrix implements IUserService {
 
-    private SimpleDateFormat sdFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+    private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     @Override
     public User getUser(Long userId) {
         User user = new User();
         user.setId(userId);
-        user.setName("From UserServiceHystrix " + sdFormat.format(new Date()));
+        user.setName(sdFormat.format(new Date()) + " From UserServiceHystrix ");
         return user;
     }
 }

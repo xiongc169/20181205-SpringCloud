@@ -8,8 +8,13 @@ import org.springframework.web.client.RestTemplate;
 import springcloud.consumer.model.User;
 import springcloud.consumer.service.IUserService;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Controller
 public class ConsumerController {
+
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     @Autowired
     //@Qualifier("SPRINGCLOUD-PROVIDER")
@@ -21,11 +26,12 @@ public class ConsumerController {
      */
     @ResponseBody
     @RequestMapping("/consumer/get")
-    public User addUser() {
+    public User getUser() {
         User user = null;
         try {
             user = userService.getUser(6l);
-            System.out.println("【Consumer】 " + user.getId() + " " + user.getName());
+            String result = format.format(new Date()) + " consumer\\ConsumerController.getUser(): " + user.getId() + " " + user.getName();
+            System.out.println(result);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
