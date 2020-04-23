@@ -14,4 +14,10 @@ public interface IUserService {
 
     @RequestMapping("/user/get")
     User getUser(@RequestParam(name = "userId") Long userId);
+
+    @RequestMapping("/user/getTime")
+    String getTime1();
+
+    @RequestMapping("/getTime")
+    String getTime2();
 }

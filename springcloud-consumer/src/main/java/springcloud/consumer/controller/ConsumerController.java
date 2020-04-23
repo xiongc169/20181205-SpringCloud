@@ -23,6 +23,7 @@ public class ConsumerController {
 
     /**
      * http://127.0.0.1:8020/consumer/get
+     * 熔断监控： http://127.0.0.1:8020/hystrix
      */
     @ResponseBody
     @RequestMapping("/consumer/get")
@@ -32,6 +33,12 @@ public class ConsumerController {
             user = userService.getUser(6l);
             String result = format.format(new Date()) + " consumer\\ConsumerController.getUser(): " + user.getId() + " " + user.getName();
             System.out.println(result);
+
+            String result1 = userService.getTime1();
+            System.out.println(format.format(new Date()) + " " + result1);
+
+            String result2 = userService.getTime2();
+            System.out.println(format.format(new Date()) + " " + result2);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

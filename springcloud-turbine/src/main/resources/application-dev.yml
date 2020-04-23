@@ -14,7 +14,7 @@ turbine:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+      defaultZone: http://peer1:8000/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
 #    healthcheck:
 #      enabled: true
 #  instance:

@@ -19,7 +19,19 @@ public class UserServiceHystrix implements IUserService {
     public User getUser(Long userId) {
         User user = new User();
         user.setId(userId);
-        user.setName(sdFormat.format(new Date()) + " From UserServiceHystrix ");
+        user.setName(sdFormat.format(new Date()) + " From UserServiceHystrix.getUser()");
         return user;
+    }
+
+    @Override
+    public String getTime1() {
+        String result = sdFormat.format(new Date()) + " From UserServiceHystrix.getTime1()";
+        return result;
+    }
+
+    @Override
+    public String getTime2() {
+        String result = sdFormat.format(new Date()) + " From UserServiceHystrix.getTime2()";
+        return result;
     }
 }
