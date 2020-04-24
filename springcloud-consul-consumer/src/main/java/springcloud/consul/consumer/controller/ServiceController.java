@@ -17,20 +17,20 @@ public class ServiceController {
 
     /**
      * 获取所有服务
-     * http:127.0.0.1:8100/consulConsumer/services
+     * http://127.0.0.1:8100/consulConsumer/services
      */
     @RequestMapping("/consulConsumer/services")
     public Object services() {
-        return discoveryClient.getInstances("springcloud-consul-service");
+        return discoveryClient.getInstances("consul-provider");
     }
 
     /**
      * 从所有服务中选择一个服务（轮询）
-     * http:127.0.0.1:8100/consulConsumer/discover
+     * http://127.0.0.1:8100/consulConsumer/discover
      */
     @RequestMapping("/consulConsumer/discover")
     public Object discover() {
-        return loadBalancerClient.choose("springcloud-consul-service").getUri().toString();
+        return loadBalancerClient.choose("consul-provider").getUri().toString();
     }
 
 }

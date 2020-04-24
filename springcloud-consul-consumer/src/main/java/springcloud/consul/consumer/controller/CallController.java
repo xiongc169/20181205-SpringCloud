@@ -14,13 +14,11 @@ public class CallController {
     private LoadBalancerClient loadBalancerClient;
 
     /**
-     * http:127.0.0.1:8100/consulConsumer/call
-     *
-     * @return
+     * http://127.0.0.1:8100/consulConsumer/call
      */
     @RequestMapping("/consulConsumer/call")
     public String call() {
-        ServiceInstance serviceInstance = loadBalancerClient.choose("springcloud-consul-service");
+        ServiceInstance serviceInstance = loadBalancerClient.choose("consul-provider");
         System.out.println("服务地址：" + serviceInstance.getUri());
         System.out.println("服务名称：" + serviceInstance.getServiceId());
 

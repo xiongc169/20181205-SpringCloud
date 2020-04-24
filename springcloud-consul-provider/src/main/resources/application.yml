@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: springcloud-consul-provider
+    name: consul-provider
   cloud:
     consul:
       host: 127.0.0.1
       port: 8500
       discovery:
-        service-name: springcloud-consul-service
+        service-name: consul-provider

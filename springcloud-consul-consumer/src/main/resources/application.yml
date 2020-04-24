@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: springcloud-consul-consumer
+    name: consul-consumer
   cloud:
     consul:
       host: 127.0.0.1

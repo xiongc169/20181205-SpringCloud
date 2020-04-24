@@ -9,21 +9,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class ConsulController {
+public class ConsulProviderController {
+
+    private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     @Value("${server.port}")
     private String port;
 
     /**
-     * http:127.0.0.1:8090/consul/getTime
-     *
-     * @return
+     * http://127.0.0.1:8090/consul/getTime
      */
     @ResponseBody
     @RequestMapping("/consul/getTime")
     public String getTime() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-        String result = port + "  ConsulController.getTime()  " + format.format(new Date());
+        String result = sdFormat.format(new Date()) + " " + port + "  consulProvider\\ConsulProviderController.getTime()";
+        System.out.println(result);
         return result;
     }
 }
