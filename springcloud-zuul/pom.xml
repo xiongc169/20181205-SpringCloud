@@ -102,8 +102,8 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin
-                </artifactId><!--使用spring-boot-dependencies时，需添加如下配置，再打包，方可用java -jar命令启动-->
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--使用spring-boot-dependencies时，需添加如下配置，再打包，方可用java -jar命令启动-->
                 <executions>
                     <execution>
                         <goals>

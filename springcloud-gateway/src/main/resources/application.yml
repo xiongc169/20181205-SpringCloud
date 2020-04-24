@@ -1,23 +1,25 @@
 server:
   port: 8110
 
+# http://127.0.0.1:8110/gateway/getTime
+#默认路由规则：http://127.0.0.1:8110/springcloud-provider/user/getTime
 
-#http://127.0.0.1:8110/gateway/getTime
-#默认路由规则：http://127.0.0.1:8110/SPRINGCLOUD-PROVIDER/user/getTime
-
-#访问 http://127.0.0.1:8110/getTime, 跳转到 http://127.0.0.1:8010/getTime
-#访问 http://127.0.0.1:8110/user/getTime, 跳转不到 http://127.0.0.1:8010/user/getTime
+#访问 http://127.0.0.1:8110/user/getTime, 跳转到 http://127.0.0.1:8010/user/getTime
+#访问 http://127.0.0.1:8110/getTime2, 跳转到 http://127.0.0.1:8010/getTime2
 spring:
   application:
     name: springcloud-gateway
-  cloud:
-    gateway:
-      routes:
-      - id: local
-        uri: http://127.0.0.1:8010/
-        predicates:
-        - Path=/getTime
-
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: user
+#        uri: http://127.0.0.1:8010/
+#        predicates:
+#        - Path=/user/**
+#      - id: getTime2
+#        uri: http://127.0.0.1:8010/
+#        predicates:
+#          - Path=/getTime2
 
 #访问 http://127.0.0.1:8110/user/getTime, 跳转到 http://127.0.0.1:8010/user/getTime
 #spring:
@@ -31,9 +33,7 @@ spring:
 #        predicates:
 #        - Path=/user/getTime
 
-
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://127.0.0.1:8761/eureka/
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8000/eureka/

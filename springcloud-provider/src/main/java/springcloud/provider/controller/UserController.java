@@ -64,7 +64,7 @@ public class UserController {
     @RequestMapping("/user/getTime")
     public String getTime1() {
         try {
-            String result = format.format(new Date()) + " provider\\UserController.getTime1(): ";
+            String result = format.format(new Date()) + " provider\\UserController.getTime(): ";
             System.out.println(result);
             return result;
         } catch (Exception ex) {

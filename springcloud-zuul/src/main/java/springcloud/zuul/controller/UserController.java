@@ -14,7 +14,7 @@ public class UserController {
     private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     /**
-     * http://127.0.0.1:8060/user/getTime
+     * http://127.0.0.1:8060/user/user/getTime
      */
     @ResponseBody
     @RequestMapping("/getTime")

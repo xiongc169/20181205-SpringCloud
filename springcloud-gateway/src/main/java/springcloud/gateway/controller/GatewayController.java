@@ -10,11 +10,12 @@ import java.util.Date;
 @Controller
 public class GatewayController {
 
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
+
     @ResponseBody
     @RequestMapping("/gateway/getTime")
     public String getTime() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-        String result = "GatewayController.getTime: " + format.format(new Date());
+        String result = format.format(new Date()) + " gateway\\GatewayController.getTime()";
         System.out.println(result);
         return result;
     }

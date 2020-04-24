@@ -8,13 +8,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/zuul")
+@RequestMapping("/myZuul")
 public class ZuulController {
 
     private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
     /**
-     * http://127.0.0.1:8060/zuul/getName
+     * http://127.0.0.1:8060/myZuul/getName
      */
     @ResponseBody
     @RequestMapping("/getName")
@@ -25,7 +25,8 @@ public class ZuulController {
     }
 
     /**
-     * http://127.0.0.1:8060/zuul/user/getTime
+     * http://127.0.0.1:8060/myZuul/getTime2
+     * http://127.0.0.1:8060/myZuul/user/getTime
      */
     @ResponseBody
     @RequestMapping("/getTime")
