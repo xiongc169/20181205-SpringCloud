@@ -10,11 +10,16 @@ import java.util.Date;
 @Controller
 public class ConfigServerController {
 
+    private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
+
+    /**
+     * http://127.0.0.1:8040/server/setConfig
+     */
     @ResponseBody
     @RequestMapping("/server/setConfig")
     public String getConfig() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-        String now = format.format(new Date());
-        return now;
+        String result = sdFormat.format(new Date()) + " configServer\\ConfigServerController.getConfig()";
+        System.out.println(result);
+        return result;
     }
 }

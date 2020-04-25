@@ -1,6 +1,8 @@
 server:
   port: 8040
 
+# 访问 http://localhost:8040/yoong/test，测试server端是否可以读取到github上面的配置信息
+# 访问 http://localhost:8040/yoong-test.properties，直接查看配置文件中的配置信息
 spring:
   application:
     name: springcloud-config-server
@@ -12,11 +14,11 @@ spring:
           search-paths: config-repo
           username:
           password:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: user
-    password: 123456
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: user
+#    password: 123456
 
 #权限配置
 management:
@@ -27,4 +29,4 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://peer1:8000/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/

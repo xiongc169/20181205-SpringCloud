@@ -1,5 +1,6 @@
 server:
   port: 8050
+
 #spring配置
 spring:
   application:
@@ -31,5 +32,5 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://peer1:8000/eureka/ #http://127.0.0.1:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
 
