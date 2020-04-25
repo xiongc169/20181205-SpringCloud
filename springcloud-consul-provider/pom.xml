@@ -86,6 +86,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>springcloud-consul-provider</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

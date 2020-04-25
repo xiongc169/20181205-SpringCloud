@@ -98,7 +98,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>springcloud-config-client.jar</finalName>
+        <finalName>springcloud-config-client</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
