@@ -1,37 +1,34 @@
 server:
   port: 8110
 
-# http://127.0.0.1:8110/gateway/getTime
-#默认路由规则：http://127.0.0.1:8110/springcloud-provider/user/getTime
+# http://127.0.0.1:8110/gateway/getTime，访问Gateway自身接口；
 
-#访问 http://127.0.0.1:8110/user/getTime, 跳转到 http://127.0.0.1:8010/user/getTime
-#访问 http://127.0.0.1:8110/getTime2, 跳转到 http://127.0.0.1:8010/getTime2
+# 默认路由规则：http://Gateway_HOST:Gateway_PORT/serviceId/**，如 http://127.0.0.1:8110/SPRINGCLOUD-PROVIDER/user/getTime
+# spring.cloud.gateway.discovery.locator.enabled=true，是否与服务发现组件进行结合，通过 serviceId(必须设置成大写)转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+
+#访问 http://127.0.0.1:8110/user/getTime -> http://127.0.0.1:8010/user/getTime
+#访问 http://127.0.0.1:8110/getTime2 -> http://127.0.0.1:8010/getTime2
 spring:
   application:
     name: springcloud-gateway
-#  cloud:
-#    gateway:
-#      routes:
-#      - id: user
-#        uri: http://127.0.0.1:8010/
-#        predicates:
-#        - Path=/user/**
-#      - id: getTime2
-#        uri: http://127.0.0.1:8010/
-#        predicates:
-#          - Path=/getTime2
-
-#访问 http://127.0.0.1:8110/user/getTime, 跳转到 http://127.0.0.1:8010/user/getTime
-#spring:
-#  application:
-#    name: springcloud-gateway
-#  cloud:
-#    gateway:
-#      routes:
-#      - id: local
-#        uri: http://127.0.0.1:8010/
-#        predicates:
-#        - Path=/user/getTime
+  cloud:
+    gateway:
+      routes:
+        - id: user
+          uri: http://127.0.0.1:8010/
+          predicates:
+            - Path=/user/**
+        - id: getTime2
+          uri: http://127.0.0.1:8010/
+          predicates:
+            - Path=/getTime2
+        - id: after
+          uri: http://127.0.0.1:8010/
+          predicates:
+            - After=2020-04-25T14:35:06+08:00[Asia/Shanghai]
+      discovery:
+        locator:
+          enabled: true #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写)转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
 
 eureka:
   client:

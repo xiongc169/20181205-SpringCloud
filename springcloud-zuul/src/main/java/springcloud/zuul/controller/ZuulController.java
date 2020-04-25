@@ -26,12 +26,12 @@ public class ZuulController {
 
     /**
      * http://127.0.0.1:8060/myZuul/getTime2
-     * http://127.0.0.1:8060/myZuul/user/getTime
+     * http://127.0.0.1:8060/myZuul/user/getTime2
      */
     @ResponseBody
-    @RequestMapping("/getTime")
-    public String getTime() {
-        String result = format.format(new Date()) + " zuul\\ZuulController.getTime()";
+    @RequestMapping("/getTime2")
+    public String getTime2() {
+        String result = format.format(new Date()) + " zuul\\ZuulController.getTime2()";
         System.out.println(result);
         return result;
     }

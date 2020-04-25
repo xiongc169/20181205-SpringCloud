@@ -23,6 +23,12 @@ public class SpringcloudGatewayApp {
         System.out.println(sdFormat.format(new Date()) + " SpringcloudGatewayApp Finished");
     }
 
+    /**
+     * Spring Cloud Gateway 网关路由有两种配置方式：
+     * 1、在配置文件 yml 中配置
+     * 2、通过@Bean自定义 RouteLocator，在启动主类 Application 中配置
+     * https://www.cnblogs.com/ityouknow/p/10141740.html
+     */
 //    @Bean
 //    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 //        return builder.routes()
