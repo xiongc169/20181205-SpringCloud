@@ -1,4 +1,4 @@
-package com.comm01.eureka;
+package com.comm01.consumer;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class EurekaTest
+public class ComConsumerTest
 {
     /**
      * Rigorous Test :-)

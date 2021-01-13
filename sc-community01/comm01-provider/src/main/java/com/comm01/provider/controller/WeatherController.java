@@ -1,6 +1,5 @@
 package com.comm01.provider.controller;
 
-import com.comm01.facade.api.IWeather;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,15 +8,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class WeatherController implements IWeather {
+public class WeatherController {
 
-    private SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
-    @Override
+    /**
+     * http://127.0.0.1:8010/weather/get
+     */
     @ResponseBody
     @RequestMapping("/weather/get")
     public String getWeather(String input) {
-        String weather = "WeatherController.getWeather: " + input + " ——" + format.format(new Date());
+        String weather = format.format(new Date()) + " WeatherController.getWeather: " + input;
         System.out.println(weather);
         return weather;
     }

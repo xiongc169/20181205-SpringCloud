@@ -1,8 +1,8 @@
 package com.comm01.consumer.controller;
 
-import com.comm01.facade.api.IWeather;
 import com.comm01.consumer.service.CalculatorService;
 import com.comm01.consumer.service.GreetService;
+import com.comm01.consumer.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +17,8 @@ public class ConsumerController {
     @Autowired
     private GreetService greetService;
 
-//    @Autowired
-//    private IGreet greet;
-
     @Autowired
-    private IWeather weather;
+    private WeatherService weather;
 
     /**
      * http://localhost:8020/consumer/calculator
@@ -40,8 +37,6 @@ public class ConsumerController {
     @ResponseBody
     @RequestMapping("/consumer/sayHello")
     public String sayHello() {
-        //String result = greet.sayHello("Tony1");
-        //System.out.println(result);
         String result = greetService.sayHello("Tony2");
         System.out.println(result);
         return result;

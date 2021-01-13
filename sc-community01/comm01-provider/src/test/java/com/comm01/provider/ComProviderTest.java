@@ -1,13 +1,13 @@
-package com.comm01.facade;
-
-import org.junit.Test;
+package com.comm01.provider;
 
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class FacadeTest
+public class ComProviderTest
 {
     /**
      * Rigorous Test :-)
