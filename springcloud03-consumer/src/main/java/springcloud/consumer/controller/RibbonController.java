@@ -11,7 +11,7 @@ import springcloud.consumer.model.User;
 import java.text.SimpleDateFormat;
 
 @Controller
-public class UserController {
+public class RibbonController {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 

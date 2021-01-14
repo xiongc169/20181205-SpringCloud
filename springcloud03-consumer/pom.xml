@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>springcloud03-consumer</name>
-    
+
     <!--<parent>-->
     <!--    <groupId>org.springframework.boot</groupId>-->
     <!--    <artifactId>spring-boot-starter-parent</artifactId>-->
@@ -86,6 +86,9 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+
+
+        <!--Spring Cloud(五)：熔断监控Hystrix Dashboard和Turbine-->
         <!--deprecated, please use spring-cloud-starter-netflix-hystrix-->
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix -->
         <!--<dependency>-->

@@ -16,13 +16,14 @@ public class UserController {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
+    private SimpleDateFormat sdFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+
     @Autowired
     private IUserService userService;
 
     @Value("${server.port}")
     private String port;
 
-    private SimpleDateFormat sdFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 
     /**
      * http://127.0.0.1:8010/user/add

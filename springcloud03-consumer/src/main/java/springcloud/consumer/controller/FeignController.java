@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class ConsumerController {
+public class FeignController {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 

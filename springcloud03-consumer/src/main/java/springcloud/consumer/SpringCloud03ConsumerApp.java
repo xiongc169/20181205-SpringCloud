@@ -17,7 +17,7 @@ import java.util.Date;
 @EnableFeignClients
 @EnableHystrixDashboard
 @EnableCircuitBreaker
-public class SpringcloudConsumerApp {
+public class SpringCloud03ConsumerApp {
 
     private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
@@ -30,8 +30,8 @@ public class SpringcloudConsumerApp {
      * 入口函数
      */
     public static void main(String[] args) {
-        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsumerApp Start...");
-        SpringApplication.run(SpringcloudConsumerApp.class, args);
-        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsumerApp Finished");
+        System.out.println(sdFormat.format(new Date()) + " SpringCloud03ConsumerApp Start...");
+        SpringApplication.run(SpringCloud03ConsumerApp.class, args);
+        System.out.println(sdFormat.format(new Date()) + " SpringCloud03ConsumerApp Finished");
     }
 }
