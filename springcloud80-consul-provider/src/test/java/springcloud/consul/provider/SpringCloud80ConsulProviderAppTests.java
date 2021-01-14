@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringcloudConsulProviderAppTests {
+public class SpringCloud80ConsulProviderAppTests {
 
     @Test
     public void contextLoads() {

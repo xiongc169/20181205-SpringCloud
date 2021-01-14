@@ -9,7 +9,7 @@ import java.util.Date;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SpringcloudConsulProviderApp {
+public class SpringCloud80ConsulProviderApp {
 
     private static SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSSS");
 
@@ -17,9 +17,9 @@ public class SpringcloudConsulProviderApp {
      * 入口函数
      */
     public static void main(String[] args) {
-        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsulProviderApp Start...");
-        SpringApplication.run(SpringcloudConsulProviderApp.class, args);
-        System.out.println(sdFormat.format(new Date()) + " SpringcloudConsulProviderApp Finished");
+        System.out.println(sdFormat.format(new Date()) + " SpringCloud80ConsulProviderApp Start...");
+        SpringApplication.run(SpringCloud80ConsulProviderApp.class, args);
+        System.out.println(sdFormat.format(new Date()) + " SpringCloud80ConsulProviderApp Finished");
     }
 }
 
