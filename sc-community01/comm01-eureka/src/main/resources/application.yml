@@ -6,8 +6,11 @@ spring:
     name: sc-eureka
 
 eureka:
+  instance:
+    hostname: peer1
+    appname: sc-eureka-app
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://peer2:8760/eureka/
